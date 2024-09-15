@@ -2,9 +2,11 @@ package com.evgenypavlov.spring.view.command_console;
 
 import com.evgenypavlov.spring.view.ConsoleUI;
 
+import java.sql.SQLException;
+
 public class Multi extends Command{
     @Override
-    public void execute() {
+    public void execute() throws SQLException {
         getConsoleUI().multi();
     }
 

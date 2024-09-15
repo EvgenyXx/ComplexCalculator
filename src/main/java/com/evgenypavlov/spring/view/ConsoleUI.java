@@ -4,6 +4,7 @@ import com.evgenypavlov.spring.controller_calc.ControllerComplexCalc;
 import com.evgenypavlov.spring.controller_calc.ControllerManagerInterface;
 import com.evgenypavlov.spring.view.command_console.MainCommand;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class ConsoleUI implements View {
@@ -13,7 +14,7 @@ public class ConsoleUI implements View {
     private final MainCommand mainCommand = new MainCommand(this);
 
     @Override
-    public void start() {
+    public void start() throws SQLException {
         while (work) {
             System.out.println(mainCommand.menu());
             String choiceS = scanner.nextLine();
@@ -23,7 +24,7 @@ public class ConsoleUI implements View {
     }
 
     @Override
-    public void add() {
+    public void add() throws SQLException {
         System.out.println("Вы выбрали сложение");
         System.out.println("Введите первое число :");
         String as = scanner.nextLine();
@@ -35,7 +36,7 @@ public class ConsoleUI implements View {
     }
 
     @Override
-    public void multi() {
+    public void multi() throws SQLException {
         System.out.println("Вы выбрали умножение");
         System.out.println("Введите первое число :");
         String as = scanner.nextLine();
@@ -47,7 +48,7 @@ public class ConsoleUI implements View {
     }
 
     @Override
-    public void division() {
+    public void division() throws SQLException {
         System.out.println("Вы выбрали вычетание");
         System.out.println("Введите первое число :");
         String as = scanner.nextLine();
@@ -60,7 +61,7 @@ public class ConsoleUI implements View {
 
 
     @Override
-    public void deduction() {
+    public void deduction() throws SQLException {
             System.out.println("Вы выбрали деление");
             System.out.println("Введите первое число :");
             String as = scanner.nextLine();
@@ -91,6 +92,7 @@ public class ConsoleUI implements View {
                 return Double.parseDouble(choice);
             } catch (NumberFormatException e) {
                 System.err.println("Некорректный формат числа. Попробуйте снова:");
+                System.out.println("Введите число:");
                 choice = scanner.nextLine();
             }
         }

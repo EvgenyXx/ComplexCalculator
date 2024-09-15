@@ -2,6 +2,7 @@ package com.evgenypavlov.spring.view.command_console;
 
 import com.evgenypavlov.spring.view.ConsoleUI;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class MainCommand {
         return stringBuilder.toString();
     }
 
-    public void execute(int choice){
+    public void execute(int choice) throws SQLException {
         Command command = commandList.get(choice-1);
         command.execute();
     }

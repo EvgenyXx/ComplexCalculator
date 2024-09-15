@@ -1,11 +1,19 @@
-package com.evgenypavlov.spring.model;
+package com.evgenypavlov.spring.model.calc;
 
 public abstract class Calculator {
-    private final double real;
-    private final double imaginary;
+    private  double real;
+    private  double imaginary;
 
     public Calculator(double real, double imaginary) {
         this.real = real;
+        this.imaginary = imaginary;
+    }
+
+    public void setReal(double real) {
+        this.real = real;
+    }
+
+    public void setImaginary(double imaginary) {
         this.imaginary = imaginary;
     }
 

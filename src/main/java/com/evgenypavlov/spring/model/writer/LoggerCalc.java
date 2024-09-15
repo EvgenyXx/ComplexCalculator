@@ -1,5 +1,6 @@
 package com.evgenypavlov.spring.model.writer;
 
+import java.sql.SQLException;
 import java.util.logging.Logger;
 
 public class LoggerCalc {
@@ -10,4 +11,6 @@ public class LoggerCalc {
     }
 
 
+    public static void error(String s, SQLException e) {
+    }
 }

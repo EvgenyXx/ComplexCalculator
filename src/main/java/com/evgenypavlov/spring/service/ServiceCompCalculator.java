@@ -1,33 +1,33 @@
 package com.evgenypavlov.spring.service;
 
-import com.evgenypavlov.spring.model.ComplexCalculator;
+import com.evgenypavlov.spring.model.calc.ComplexCalculator;
+import com.evgenypavlov.spring.model.calc.ComplexCalculatorFacade;
+import com.evgenypavlov.spring.model.calc.FacadeManagerInterface;
+
+import java.sql.SQLException;
 
 
 public class ServiceCompCalculator implements ManagerServiceInterface {
-    private ComplexCalculator command;
-
+    private final FacadeManagerInterface facadeManagerInterface = new ComplexCalculatorFacade();
 
     @Override
-    public String add(double real, double imaginary) {
-       command = new ComplexCalculator(real, imaginary);
-        return command.add(command);
+    public String add(double real, double imaginary) throws SQLException {
+        return facadeManagerInterface.add(real, imaginary);
     }
 
     @Override
-    public String multi(double real, double imaginary) {
-        command = new ComplexCalculator(real, imaginary);
-        return command.multi(command);
+    public String multi(double real, double imaginary) throws SQLException {
+      return   facadeManagerInterface.multi(real, imaginary);
     }
 
     @Override
-    public String division(double real, double imaginary) {
-        command = new ComplexCalculator(real, imaginary);
-        return command.division(command);
+    public String division(double real, double imaginary) throws SQLException {
+        return facadeManagerInterface.division(real, imaginary);
     }
 
     @Override
-    public String deduction(double real, double imaginary) {
-        command = new ComplexCalculator(real, imaginary);
-        return command.deduction(command);
+    public String deduction(double real, double imaginary) throws SQLException {
+        return facadeManagerInterface.deduction(real, imaginary);
     }
+
 }

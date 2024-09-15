@@ -2,6 +2,8 @@ package com.evgenypavlov.spring.view.command_console;
 
 import com.evgenypavlov.spring.view.ConsoleUI;
 
+import java.sql.SQLException;
+
 public  abstract class Command {
     private final String description;
     private final ConsoleUI consoleUI;
@@ -19,5 +21,5 @@ public  abstract class Command {
         return consoleUI;
     }
 
-    public abstract void execute();
+    public abstract void execute() throws SQLException;
 }

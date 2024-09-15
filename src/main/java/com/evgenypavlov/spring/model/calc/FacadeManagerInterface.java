@@ -1,8 +1,8 @@
-package com.evgenypavlov.spring.service;
+package com.evgenypavlov.spring.model.calc;
 
 import java.sql.SQLException;
 
-public interface ManagerServiceInterface {
+public interface FacadeManagerInterface {
     String add(double real,double  imaginary) throws SQLException;
     String multi(double real,double  imaginary) throws SQLException;
     String division (double real,double  imaginary) throws SQLException;
